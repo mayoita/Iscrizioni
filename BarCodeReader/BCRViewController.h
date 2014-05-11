@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BCRViewController : UIViewController
+@interface BCRViewController : UIViewController<ZBarReaderDelegate,UIAlertViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextView *resultText;
+@property (weak, nonatomic) IBOutlet UIImageView *resultImage;
+@property(strong,nonatomic)NSMutableDictionary *iscrizioni;
+- (IBAction) scanButtonTapped;
 @end
