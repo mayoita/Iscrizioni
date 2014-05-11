@@ -99,7 +99,7 @@ static BOOL pressed;
                                                  otherButtonTitles:nil];
                 
                 [self.alertView show];
-              //aggiungere QUI controllo con l'ora attuale 
+              //aggiungere QUI controllo con l'ora attuale e sotto
             } else if(TorneoPomeridiano<hour<TorneoSerale) {
                 
             } else if(TorneoSerale<hour<TorneoNotturno) {
