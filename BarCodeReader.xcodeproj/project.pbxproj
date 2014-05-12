@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		225FD2F6191EBEEA000566D6 /* Tornei.plist in Resources */ = {isa = PBXBuildFile; fileRef = 225FD2F5191EBEEA000566D6 /* Tornei.plist */; };
+		229AEAC31921712200B632AD /* BCRCreateList.m in Sources */ = {isa = PBXBuildFile; fileRef = 229AEAC21921712200B632AD /* BCRCreateList.m */; };
 		22A0A7D5191D6E6200EE3754 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A0A7D4191D6E6200EE3754 /* Foundation.framework */; };
 		22A0A7D7191D6E6200EE3754 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A0A7D6191D6E6200EE3754 /* CoreGraphics.framework */; };
 		22A0A7D9191D6E6200EE3754 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A0A7D8191D6E6200EE3754 /* UIKit.framework */; };
@@ -47,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		225FD2F5191EBEEA000566D6 /* Tornei.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tornei.plist; sourceTree = "<group>"; };
+		229AEAC11921712200B632AD /* BCRCreateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCRCreateList.h; sourceTree = "<group>"; };
+		229AEAC21921712200B632AD /* BCRCreateList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCRCreateList.m; sourceTree = "<group>"; };
 		22A0A7D1191D6E6200EE3754 /* BarCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A0A7D4191D6E6200EE3754 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22A0A7D6191D6E6200EE3754 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -173,6 +176,8 @@
 				22A0A7E9191D6E6200EE3754 /* Main_iPad.storyboard */,
 				22A0A7EC191D6E6200EE3754 /* BCRViewController.h */,
 				22A0A7ED191D6E6200EE3754 /* BCRViewController.m */,
+				229AEAC11921712200B632AD /* BCRCreateList.h */,
+				229AEAC21921712200B632AD /* BCRCreateList.m */,
 				22A0A80C191D703000EE3754 /* Headers */,
 				22A0A823191D703000EE3754 /* libzbar.a */,
 				22A0A824191D703000EE3754 /* Resources */,
@@ -371,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22A0A7E5191D6E6200EE3754 /* BCRAppDelegate.m in Sources */,
+				229AEAC31921712200B632AD /* BCRCreateList.m in Sources */,
 				22A0A7EE191D6E6200EE3754 /* BCRViewController.m in Sources */,
 				22A0A7E1191D6E6200EE3754 /* main.m in Sources */,
 			);
