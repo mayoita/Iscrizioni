@@ -7,8 +7,8 @@
 //
 
 #import "BCRViewController.h"
-#define TorneoPomeridiano 24
-#define TorneoSerale 24
+#define TorneoPomeridiano 18
+#define TorneoSerale 19
 #define TorneoNotturno 24
 
 @interface BCRViewController ()
@@ -24,8 +24,16 @@ static BOOL pressed;
     ZBarReaderViewController *reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;
     reader.supportedOrientationsMask = ZBarOrientationMaskAll;
+//    UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+//    if (UIDeviceOrientationLandscapeLeft == orientation) {
+//        //Rotate 90
+//        reader.cameraViewTransform = CGAffineTransformMakeRotation (3*M_PI/2.0);
+//    } else if (UIDeviceOrientationLandscapeRight == orientation) {
+//        //Rotate 270
+//        reader.cameraViewTransform = CGAffineTransformMakeRotation (M_PI/2.0);
+//    }
     //reader.cameraDevice=UIImagePickerControllerCameraDeviceFront;
-    
+  
     ZBarImageScanner *scanner = reader.scanner;
     // TODO: (optional) additional reader configuration here
     
@@ -47,6 +55,7 @@ static BOOL pressed;
  didFinishPickingMediaWithInfo: (NSDictionary*) info
 {
     // ADD: get the decode results
+    
     id<NSFastEnumeration> results =
     [info objectForKey: ZBarReaderControllerResults];
     ZBarSymbol *symbol = nil;
@@ -85,13 +94,15 @@ static BOOL pressed;
         NSDate* lastTournament=[[self.iscrizioni objectForKey:symbol.data] lastObject];
        
         NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit) fromDate:lastTournament];
+        NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:lastTournament];
+         NSDateComponents *componentsNow = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:[NSDate date]];
         NSInteger hour = [components hour];
+        NSInteger hourNow = [componentsNow hour];
 
         
         //Controlla se si è già iscritto oggi
         if ([lastTournament compare:[NSDate date]]) {
-            if (hour<TorneoPomeridiano) {
+            if ((hour<TorneoPomeridiano) && (hourNow<TorneoPomeridiano)) {
                 self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
                                                            message:@"Ti sei già registrato per il torneo pomeridiano!"
                                                           delegate:self
@@ -100,10 +111,17 @@ static BOOL pressed;
                 
                 [self.alertView show];
               //aggiungere QUI controllo con l'ora attuale e sotto
-            } else if(TorneoPomeridiano<hour<TorneoSerale) {
+            } else if((TorneoPomeridiano<hour && hour<TorneoSerale) && (TorneoPomeridiano<hourNow && hourNow<TorneoSerale)) {
+                NSLog(@"Sera");
+                self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
+                                                           message:@"Ti sei già registrato per il torneo serale!"
+                                                          delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
                 
+                [self.alertView show];
             } else if(TorneoSerale<hour<TorneoNotturno) {
-                
+                 NSLog(@"Notte");
             }
         } else {
             //Ha già partecipato a tornei ma non a quello odierno, quindi lo iscrivo
@@ -112,7 +130,7 @@ static BOOL pressed;
             [self.iscrizioni setObject:torneo  forKey:symbol.data];
             [self salvaDati:symbol];
             self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
-                                                       message:@"Sei stato aggiunto alla lista di attesa."
+                                                       message:@"Sei stato aggiunto alla lista di attesa notturna."
                                                       delegate:self
                                              cancelButtonTitle:@"OK"
                                              otherButtonTitles:nil];
@@ -155,6 +173,9 @@ static BOOL pressed;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //iPad
+    
     NSMutableArray *a=[[NSMutableArray alloc] init];
     [a addObject:[NSDate date]];
     NSDate *b=a[0];
@@ -190,10 +211,9 @@ static BOOL pressed;
     self.iscrizioni=temp;
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return(YES);
 }
 
 @end
