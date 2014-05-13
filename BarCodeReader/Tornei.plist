@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>VB12O7-B01BF108</key>
+	<array>
+		<date>2014-05-12T15:22:24Z</date>
+		<date>2014-05-13T20:07:26Z</date>
+	</array>
+	<key>VB12O7-B01BF107</key>
+	<array>
+		<date>2014-05-12T15:22:24Z</date>
+		<date>2014-05-12T20:07:26Z</date>
+		<date>2014-05-13T20:09:26Z</date>
+	</array>
+	<key>VB12O7-B01BF109</key>
+	<array>
+		<date>2014-05-12T15:22:24Z</date>
+		<date>2014-05-12T20:07:26Z</date>
+		<date>2014-05-13T13:07:26Z</date>
+		<date>2014-05-13T20:10:26Z</date>
+	</array>
+	<key>VB12O7-B01BF110</key>
+	<array>
+		<date>2014-05-13T20:22:24Z</date>
+	</array>
+</dict>
 </plist>

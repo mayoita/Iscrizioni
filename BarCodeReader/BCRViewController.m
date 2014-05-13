@@ -7,8 +7,9 @@
 //
 
 #import "BCRViewController.h"
-#define TorneoPomeridiano 18
-#define TorneoSerale 19
+
+#define TorneoPomeridiano 16
+#define TorneoSerale 21
 #define TorneoNotturno 24
 
 @interface BCRViewController ()
@@ -88,54 +89,51 @@ static BOOL pressed;
 -(void)findDuplicate:(ZBarSymbol *) symbol dataTorneo:(NSDate *)dataTorneo {
     if ([self.iscrizioni objectForKey:symbol.data]) {
     
-        NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
-        NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:[[self.iscrizioni objectForKey:symbol.data] lastObject]];
+        //NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+        //NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:[[self.iscrizioni objectForKey:symbol.data] lastObject]];
        // NSDate* lastTournament = [[NSDate alloc] initWithTimeInterval:-destinationGMTOffset sinceDate:[[self.iscrizioni objectForKey:symbol.data] lastObject]];
         NSDate* lastTournament=[[self.iscrizioni objectForKey:symbol.data] lastObject];
        
         NSCalendar *calendar = [NSCalendar currentCalendar];
-        NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:lastTournament];
-         NSDateComponents *componentsNow = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate:[NSDate date]];
+
+        NSDateComponents *components = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit |NSDayCalendarUnit |NSMonthCalendarUnit) fromDate:lastTournament];
+        NSDateComponents *componentsNow = [calendar components:(NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit) fromDate:[NSDate date]];
         NSInteger hour = [components hour];
+        NSInteger day=[components day];
+        NSInteger month=[components month];
+        
         NSInteger hourNow = [componentsNow hour];
+        NSInteger dayNow=[componentsNow day];
+        NSInteger monthNow=[componentsNow month];
 
         
         //Controlla se si è già iscritto oggi
-        if ([lastTournament compare:[NSDate date]]) {
-            if ((hour<TorneoPomeridiano) && (hourNow<TorneoPomeridiano)) {
-                self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
-                                                           message:@"Ti sei già registrato per il torneo pomeridiano!"
-                                                          delegate:self
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:nil];
-                
-                [self.alertView show];
+        NSLog(@"Data: %@", [NSDate date]);
+        if (day==dayNow && month==monthNow) {
+            if (hourNow<TorneoPomeridiano) {
+                if (hour<TorneoPomeridiano) {
+                    [self showAlert:@"pomeridiano!"];
+                } else {
+                    NSLog(@"Maybe there is a serious problem...");
+                }
               //aggiungere QUI controllo con l'ora attuale e sotto
-            } else if((TorneoPomeridiano<hour && hour<TorneoSerale) && (TorneoPomeridiano<hourNow && hourNow<TorneoSerale)) {
-                NSLog(@"Sera");
-                self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
-                                                           message:@"Ti sei già registrato per il torneo serale!"
-                                                          delegate:self
-                                                 cancelButtonTitle:@"OK"
-                                                 otherButtonTitles:nil];
-                
-                [self.alertView show];
-            } else if(TorneoSerale<hour<TorneoNotturno) {
-                 NSLog(@"Notte");
+            } else if(hourNow>=TorneoPomeridiano && hourNow<TorneoSerale) {
+                if (hour>=TorneoPomeridiano && hour<TorneoSerale) {
+                    [self showAlert:@"serale!"];
+                } else {
+                    [self aggiungiALista:symbol];
+                }
+            } else if(hourNow>=TorneoSerale && hourNow<TorneoNotturno) {
+                if (hour>=TorneoSerale && hour<TorneoNotturno) {
+                    [self showAlert:@"notturno!"];
+                } else {
+                    [self aggiungiALista:symbol];
+                }
             }
         } else {
             //Ha già partecipato a tornei ma non a quello odierno, quindi lo iscrivo
-            NSMutableArray *torneo=[self.iscrizioni objectForKey:symbol.data];
-            [torneo addObject:[NSDate date]];
-            [self.iscrizioni setObject:torneo  forKey:symbol.data];
-            [self salvaDati:symbol];
-            self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
-                                                       message:@"Sei stato aggiunto alla lista di attesa notturna."
-                                                      delegate:self
-                                             cancelButtonTitle:@"OK"
-                                             otherButtonTitles:nil];
-            
-            [self.alertView show];
+            [self aggiungiALista:symbol];
+
         }
         
     } else {
@@ -151,6 +149,29 @@ static BOOL pressed;
         [self.alertView show];
     }
 
+}
+-(void)showAlert:(NSString *)withString {
+    self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
+                                               message:[NSString stringWithFormat:@"Ti sei già registrato per il torneo %@", withString]
+                                              delegate:self
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil];
+    
+    [self.alertView show];
+}
+
+-(void)aggiungiALista:(ZBarSymbol *) symbol {
+    NSMutableArray *torneo=[self.iscrizioni objectForKey:symbol.data];
+    [torneo addObject:[NSDate date]];
+    [self.iscrizioni setObject:torneo  forKey:symbol.data];
+    [self salvaDati:symbol];
+    self.alertView= [[UIAlertView alloc] initWithTitle:@"Ciao! "
+                                               message:@"Sei stato aggiunto alla lista di attesa."
+                                              delegate:self
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil];
+    
+    [self.alertView show];
 }
 
 -(void)salvaDati:(ZBarSymbol *)symbol {
@@ -173,12 +194,7 @@ static BOOL pressed;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //iPad
-    
-    NSMutableArray *a=[[NSMutableArray alloc] init];
-    [a addObject:[NSDate date]];
-    NSDate *b=a[0];
+
     
     self.iscrizioni=[[NSMutableDictionary alloc] init];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -211,9 +227,11 @@ static BOOL pressed;
     self.iscrizioni=temp;
 }
 
+
 - (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation
 {
     return(YES);
 }
+
 
 @end
