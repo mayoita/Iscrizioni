@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224BB1E3193725B200EDDDFB /* CustomAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 224BB1E2193725B200EDDDFB /* CustomAlertViewController.m */; };
 		225FD2F6191EBEEA000566D6 /* Tornei.plist in Resources */ = {isa = PBXBuildFile; fileRef = 225FD2F5191EBEEA000566D6 /* Tornei.plist */; };
 		229AEAC31921712200B632AD /* BCRCreateList.m in Sources */ = {isa = PBXBuildFile; fileRef = 229AEAC21921712200B632AD /* BCRCreateList.m */; };
 		22A0A7D5191D6E6200EE3754 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A0A7D4191D6E6200EE3754 /* Foundation.framework */; };
@@ -34,6 +35,20 @@
 		22A0A833191D708700EE3754 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A0A832191D708700EE3754 /* CoreVideo.framework */; };
 		22A0A835191D708E00EE3754 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A0A834191D708E00EE3754 /* QuartzCore.framework */; };
 		22A0A837191D709B00EE3754 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22A0A836191D709B00EE3754 /* libiconv.dylib */; };
+		22D7C596192392280085E0A9 /* RSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C58B192392280085E0A9 /* RSCell.m */; };
+		22D7C597192392280085E0A9 /* RSStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C58D192392280085E0A9 /* RSStyle.m */; };
+		22D7C598192392280085E0A9 /* RSworkBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C58F192392280085E0A9 /* RSworkBook.m */; };
+		22D7C599192392280085E0A9 /* RSworkSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C591192392280085E0A9 /* RSworkSheet.m */; };
+		22D7C59A192392280085E0A9 /* RSworkSheetRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C593192392280085E0A9 /* RSworkSheetRow.m */; };
+		22D7C59B192392280085E0A9 /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C595192392280085E0A9 /* UIColor-Expanded.m */; };
+		22D7C59D1923C3600085E0A9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D7C59C1923C3600085E0A9 /* MessageUI.framework */; };
+		22D7C5A11924B4160085E0A9 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C5A01924B4160085E0A9 /* TimerVC.m */; };
+		22D7C5A31924ECB30085E0A9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D7C5A21924ECB30085E0A9 /* libz.dylib */; };
+		22D7C5AB1924ED3C0085E0A9 /* TTCounterLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C5AA1924ED3C0085E0A9 /* TTCounterLabel.m */; };
+		22D7C5AD1924ED5B0085E0A9 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C5AC1924ED5B0085E0A9 /* TTTAttributedLabel.m */; };
+		22D7C5B0192606B50085E0A9 /* BCRArtView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C5AF192606B50085E0A9 /* BCRArtView.m */; };
+		22D7C5B4192654290085E0A9 /* CooperBT-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22D7C5B119264F6D0085E0A9 /* CooperBT-Bold.ttf */; };
+		22D7C5B7192661450085E0A9 /* BCRFinishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7C5B6192661450085E0A9 /* BCRFinishViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		224BB1E1193725B200EDDDFB /* CustomAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAlertViewController.h; sourceTree = "<group>"; };
+		224BB1E2193725B200EDDDFB /* CustomAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAlertViewController.m; sourceTree = "<group>"; };
 		225FD2F5191EBEEA000566D6 /* Tornei.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tornei.plist; sourceTree = "<group>"; };
 		229AEAC11921712200B632AD /* BCRCreateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCRCreateList.h; sourceTree = "<group>"; };
 		229AEAC21921712200B632AD /* BCRCreateList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCRCreateList.m; sourceTree = "<group>"; };
@@ -100,6 +117,34 @@
 		22A0A832191D708700EE3754 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		22A0A834191D708E00EE3754 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		22A0A836191D709B00EE3754 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		22D7C58A192392280085E0A9 /* RSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSCell.h; sourceTree = "<group>"; };
+		22D7C58B192392280085E0A9 /* RSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSCell.m; sourceTree = "<group>"; };
+		22D7C58C192392280085E0A9 /* RSStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSStyle.h; sourceTree = "<group>"; };
+		22D7C58D192392280085E0A9 /* RSStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSStyle.m; sourceTree = "<group>"; };
+		22D7C58E192392280085E0A9 /* RSworkBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSworkBook.h; sourceTree = "<group>"; };
+		22D7C58F192392280085E0A9 /* RSworkBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSworkBook.m; sourceTree = "<group>"; };
+		22D7C590192392280085E0A9 /* RSworkSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSworkSheet.h; sourceTree = "<group>"; };
+		22D7C591192392280085E0A9 /* RSworkSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSworkSheet.m; sourceTree = "<group>"; };
+		22D7C592192392280085E0A9 /* RSworkSheetRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSworkSheetRow.h; sourceTree = "<group>"; };
+		22D7C593192392280085E0A9 /* RSworkSheetRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSworkSheetRow.m; sourceTree = "<group>"; };
+		22D7C594192392280085E0A9 /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
+		22D7C595192392280085E0A9 /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
+		22D7C59C1923C3600085E0A9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		22D7C59F1924B4160085E0A9 /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
+		22D7C5A01924B4160085E0A9 /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerVC.m; sourceTree = "<group>"; };
+		22D7C5A21924ECB30085E0A9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		22D7C5A41924ECCC0085E0A9 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		22D7C5A61924ECD20085E0A9 /* libPods-TTCounterLabel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-TTCounterLabel.a"; path = "Pods/build/Debug-iphoneos/libPods-TTCounterLabel.a"; sourceTree = "<group>"; };
+		22D7C5A81924ECD60085E0A9 /* libPods-TTTAttributedLabel.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-TTTAttributedLabel.a"; path = "Pods/build/Debug-iphoneos/libPods-TTTAttributedLabel.a"; sourceTree = "<group>"; };
+		22D7C5AA1924ED3C0085E0A9 /* TTCounterLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TTCounterLabel.m; path = Pods/TTCounterLabel/Source/TTCounterLabel.m; sourceTree = "<group>"; };
+		22D7C5AC1924ED5B0085E0A9 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TTTAttributedLabel.m; path = Pods/TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.m; sourceTree = "<group>"; };
+		22D7C5AE192606B50085E0A9 /* BCRArtView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCRArtView.h; sourceTree = "<group>"; };
+		22D7C5AF192606B50085E0A9 /* BCRArtView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCRArtView.m; sourceTree = "<group>"; };
+		22D7C5B119264F6D0085E0A9 /* CooperBT-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CooperBT-Bold.ttf"; sourceTree = "<group>"; };
+		22D7C5B5192661450085E0A9 /* BCRFinishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCRFinishViewController.h; sourceTree = "<group>"; };
+		22D7C5B6192661450085E0A9 /* BCRFinishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCRFinishViewController.m; sourceTree = "<group>"; };
+		3926B249BBE548F7B210A5C6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23F2D10A2B74005A1B9E5B8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +152,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D7C5A31924ECB30085E0A9 /* libz.dylib in Frameworks */,
+				22D7C59D1923C3600085E0A9 /* MessageUI.framework in Frameworks */,
 				22A0A837191D709B00EE3754 /* libiconv.dylib in Frameworks */,
 				22A0A835191D708E00EE3754 /* QuartzCore.framework in Frameworks */,
 				22A0A833191D708700EE3754 /* CoreVideo.framework in Frameworks */,
@@ -132,13 +179,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224BB1E01937250900EDDDFB /* Custom Alert */ = {
+			isa = PBXGroup;
+			children = (
+				224BB1E1193725B200EDDDFB /* CustomAlertViewController.h */,
+				224BB1E2193725B200EDDDFB /* CustomAlertViewController.m */,
+			);
+			name = "Custom Alert";
+			sourceTree = "<group>";
+		};
 		22A0A7C8191D6E6200EE3754 = {
 			isa = PBXGroup;
 			children = (
+				22D7C5AC1924ED5B0085E0A9 /* TTTAttributedLabel.m */,
+				22D7C5AA1924ED3C0085E0A9 /* TTCounterLabel.m */,
 				22A0A7DA191D6E6200EE3754 /* BarCodeReader */,
 				22A0A7FC191D6E6300EE3754 /* BarCodeReaderTests */,
 				22A0A7D3191D6E6200EE3754 /* Frameworks */,
 				22A0A7D2191D6E6200EE3754 /* Products */,
+				E23F2D10A2B74005A1B9E5B8 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,6 +213,11 @@
 		22A0A7D3191D6E6200EE3754 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22D7C5A81924ECD60085E0A9 /* libPods-TTTAttributedLabel.a */,
+				22D7C5A61924ECD20085E0A9 /* libPods-TTCounterLabel.a */,
+				22D7C5A41924ECCC0085E0A9 /* libPods.a */,
+				22D7C5A21924ECB30085E0A9 /* libz.dylib */,
+				22D7C59C1923C3600085E0A9 /* MessageUI.framework */,
 				22A0A836191D709B00EE3754 /* libiconv.dylib */,
 				22A0A834191D708E00EE3754 /* QuartzCore.framework */,
 				22A0A832191D708700EE3754 /* CoreVideo.framework */,
@@ -163,6 +227,7 @@
 				22A0A7D6191D6E6200EE3754 /* CoreGraphics.framework */,
 				22A0A7D8191D6E6200EE3754 /* UIKit.framework */,
 				22A0A7F6191D6E6200EE3754 /* XCTest.framework */,
+				3926B249BBE548F7B210A5C6 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -170,14 +235,22 @@
 		22A0A7DA191D6E6200EE3754 /* BarCodeReader */ = {
 			isa = PBXGroup;
 			children = (
+				224BB1E01937250900EDDDFB /* Custom Alert */,
+				22D7C59E1924B4020085E0A9 /* Timer */,
+				22D7C589192392150085E0A9 /* RSSheet */,
 				22A0A7E3191D6E6200EE3754 /* BCRAppDelegate.h */,
 				22A0A7E4191D6E6200EE3754 /* BCRAppDelegate.m */,
 				22A0A7E6191D6E6200EE3754 /* Main_iPhone.storyboard */,
 				22A0A7E9191D6E6200EE3754 /* Main_iPad.storyboard */,
 				22A0A7EC191D6E6200EE3754 /* BCRViewController.h */,
 				22A0A7ED191D6E6200EE3754 /* BCRViewController.m */,
+				22D7C5B119264F6D0085E0A9 /* CooperBT-Bold.ttf */,
 				229AEAC11921712200B632AD /* BCRCreateList.h */,
 				229AEAC21921712200B632AD /* BCRCreateList.m */,
+				22D7C5AE192606B50085E0A9 /* BCRArtView.h */,
+				22D7C5AF192606B50085E0A9 /* BCRArtView.m */,
+				22D7C5B5192661450085E0A9 /* BCRFinishViewController.h */,
+				22D7C5B6192661450085E0A9 /* BCRFinishViewController.m */,
 				22A0A80C191D703000EE3754 /* Headers */,
 				22A0A823191D703000EE3754 /* libzbar.a */,
 				22A0A824191D703000EE3754 /* Resources */,
@@ -271,6 +344,34 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		22D7C589192392150085E0A9 /* RSSheet */ = {
+			isa = PBXGroup;
+			children = (
+				22D7C58A192392280085E0A9 /* RSCell.h */,
+				22D7C58B192392280085E0A9 /* RSCell.m */,
+				22D7C58C192392280085E0A9 /* RSStyle.h */,
+				22D7C58D192392280085E0A9 /* RSStyle.m */,
+				22D7C58E192392280085E0A9 /* RSworkBook.h */,
+				22D7C58F192392280085E0A9 /* RSworkBook.m */,
+				22D7C590192392280085E0A9 /* RSworkSheet.h */,
+				22D7C591192392280085E0A9 /* RSworkSheet.m */,
+				22D7C592192392280085E0A9 /* RSworkSheetRow.h */,
+				22D7C593192392280085E0A9 /* RSworkSheetRow.m */,
+				22D7C594192392280085E0A9 /* UIColor-Expanded.h */,
+				22D7C595192392280085E0A9 /* UIColor-Expanded.m */,
+			);
+			name = RSSheet;
+			sourceTree = "<group>";
+		};
+		22D7C59E1924B4020085E0A9 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				22D7C59F1924B4160085E0A9 /* TimerVC.h */,
+				22D7C5A01924B4160085E0A9 /* TimerVC.m */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,9 +379,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22A0A806191D6E6300EE3754 /* Build configuration list for PBXNativeTarget "BarCodeReader" */;
 			buildPhases = (
+				FD77745F7A2942D5B95911D2 /* Check Pods Manifest.lock */,
 				22A0A7CD191D6E6200EE3754 /* Sources */,
 				22A0A7CE191D6E6200EE3754 /* Frameworks */,
 				22A0A7CF191D6E6200EE3754 /* Resources */,
+				1C43D3D7080E417D937AF3DC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -348,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D7C5B4192654290085E0A9 /* CooperBT-Bold.ttf in Resources */,
 				22A0A7EB191D6E6200EE3754 /* Main_iPad.storyboard in Resources */,
 				22A0A7F0191D6E6200EE3754 /* Images.xcassets in Resources */,
 				22A0A7E8191D6E6200EE3754 /* Main_iPhone.storyboard in Resources */,
@@ -370,14 +474,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1C43D3D7080E417D937AF3DC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD77745F7A2942D5B95911D2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22A0A7CD191D6E6200EE3754 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D7C5AD1924ED5B0085E0A9 /* TTTAttributedLabel.m in Sources */,
+				22D7C5AB1924ED3C0085E0A9 /* TTCounterLabel.m in Sources */,
 				22A0A7E5191D6E6200EE3754 /* BCRAppDelegate.m in Sources */,
+				22D7C5B7192661450085E0A9 /* BCRFinishViewController.m in Sources */,
+				22D7C599192392280085E0A9 /* RSworkSheet.m in Sources */,
+				22D7C598192392280085E0A9 /* RSworkBook.m in Sources */,
+				22D7C59A192392280085E0A9 /* RSworkSheetRow.m in Sources */,
 				229AEAC31921712200B632AD /* BCRCreateList.m in Sources */,
+				224BB1E3193725B200EDDDFB /* CustomAlertViewController.m in Sources */,
+				22D7C597192392280085E0A9 /* RSStyle.m in Sources */,
+				22D7C59B192392280085E0A9 /* UIColor-Expanded.m in Sources */,
 				22A0A7EE191D6E6200EE3754 /* BCRViewController.m in Sources */,
+				22D7C5B0192606B50085E0A9 /* BCRArtView.m in Sources */,
+				22D7C596192392280085E0A9 /* RSCell.m in Sources */,
+				22D7C5A11924B4160085E0A9 /* TimerVC.m in Sources */,
 				22A0A7E1191D6E6200EE3754 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -520,6 +669,7 @@
 		};
 		22A0A807191D6E6300EE3754 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E23F2D10A2B74005A1B9E5B8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -529,6 +679,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BarCodeReader",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -537,6 +688,7 @@
 		};
 		22A0A808191D6E6300EE3754 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E23F2D10A2B74005A1B9E5B8 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -546,6 +698,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BarCodeReader",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

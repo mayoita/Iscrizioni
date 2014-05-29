@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface BCRViewController : UIViewController<ZBarReaderDelegate,UIAlertViewDelegate>
+#import "CustomAlertViewController.h"
+@interface BCRViewController : UIViewController<ZBarReaderDelegate,UIAlertViewDelegate,CustomAlertViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *resultText;
 @property (weak, nonatomic) IBOutlet UIImageView *resultImage;
 @property(strong,nonatomic)NSMutableDictionary *iscrizioni;
 - (IBAction) scanButtonTapped;
+@property (weak, nonatomic) IBOutlet UIButton *button1;
+@property (weak, nonatomic) IBOutlet UIButton *button2;
+@property (weak, nonatomic) IBOutlet UIButton *button3;
 @end

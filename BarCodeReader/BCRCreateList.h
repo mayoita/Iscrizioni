@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BCRCreateList : UIViewController
+
+@interface BCRCreateList : UIViewController<UITableViewDelegate,UITableViewDataSource >
 @property(strong,nonatomic)NSMutableDictionary *iscrizioni;
+@property (weak, nonatomic) IBOutlet UITableView *listaIscritti;
 @end
